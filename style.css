@@ -1,87 +1,512 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* The Modal (background) */
-.modal {
-  display: block; /* Show the modal by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.7); /* Dark wine color with opacity */
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s;
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #f7f1e3; /* Soft beige for wine theme */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all;
   width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s;
-}
-
-/* The Close Button */
-.close {
-  color: white; /* Deep wine color */
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 10px 16px;
-  background-color: #891e19; /* Deep wine color */
-  color: white;
-}
-
-.modal-body {padding: 10px 16px;}
-
-.modal-footer {
-  padding: 10px 16px;
-  background-color: #891e19; /* Deep wine color */
-  color: white;
+  background-color: #000;
 }
 
 #submit-age {
   background-color: #891e19; /* Deep wine color */
   color: white;
-  padding: 10px;
   border: none;
   cursor: pointer;
 }
 
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.4s;
 }
-
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #f7f1e3;
+  width: 100%;
+  animation: slideIn 0.4s;
+}
+.close {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  float: right;
+}
+.close:hover, .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 10px 16px;
+  background-color: #891e19;
+  color: white;
+}
+.modal-footer {
+  padding: 10px 16px;
+  background-color: #891e19;
+  color: white;
+}
+.modal-body {
+  padding: 10px 16px;
+}
 @keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+  from { bottom: -300px; opacity: 0 }
+  to { bottom: 0; opacity: 1 }
 }
-
-@-webkit-keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
-}
-
 @keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+/* BARRA DE ROLAGEM */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #891e19;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60100c;
+}
+
+/* PRMEIRA SECTION (HEADER) */
+
+.header {
+  background-image: url(../img/Background__Header.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 10em;
+}
+
+.texto__header {
+  margin-bottom: 44px;
+}
+
+.texto__header .titulo img {
+  margin-bottom: -50px;
+}
+.subtitulo.home {
+  margin-left: 0.6em;
+}
+
+/* NAV */
+
+.nav__bar {
+  text-align: center;
+  margin-top: 18px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(0, 0, 0, 0.83) 40%,
+    rgba(0, 0, 0, 0) 62%
+  );
+  height: 12em;
+  width: 100%;
+  margin-top: -1em;
+  padding-top: 1em;
+}
+
+.nav__bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__bar li {
+  margin: 2vh 2vw;
+  margin-right: 70px;
+  display: inline-block;
+}
+
+.nav__bar li a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  padding: 5px 10px;
+  transition: 300ms;
+}
+
+.nav__bar li a:hover {
+  color: #891e19;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* CONTAINER GRID / DISPLAY */
+
+.header .container__grid {
+  justify-content: space-between;
+}
+
+.header,
+.container__section {
+  min-height: 100vh;
+  max-height: 1440px;
+  min-width: 100vw;
+  max-width: 1200px;
+  position: relative;
+}
+
+.container__grid {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.divisor {
+  border-bottom: 1px solid white;
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 5em;
+  margin-bottom: -2em;
+}
+
+/* SEGUNDA SECTION MADE FOR YOU */
+
+.container__texto {
+  display: flex;
+}
+
+.container__section:nth-child(2) .container__grid {
+  justify-content: space-evenly;
+}
+
+.container__texto__sec {
+  display: flex;
+  flex-direction: column;
+}
+.subtitulo.made-fy {
+  color: #dfdfdf;
+  margin-top: 0.8em;
+}
+.container__texto__sec img {
+  width: 15rem;
+  height: 2rem;
+  object-fit: cover;
+  margin-top: -20px;
+}
+.container__texto__sec h1 {
+  margin-bottom: 0%;
+  margin-left: 1.5rem;
+  align-items: center;
+}
+
+.text__display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8em;
+}
+
+.text__block {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 2rem;
+}
+
+.text__display .text__block:first-child {
+  margin-right: -25px;
+}
+
+.text__block p {
+  font-family: 'GFS Didot', serif;
+  font-size: 26px;
+  color: black;
+  background-color: white;
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px;
+}
+
+.Background__Madeforyou {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.divisor.made-fy {
+  width: 30%;
+  margin-top: 25m;
+}
+.gradient.made-fy {
+  rotate: 180deg;
+  width: 100vw;
+  position: relative;
+  z-index: -1;
+  margin-left: -5em;
+  /* margin-top: 8.5em; */
+}
+
+/* TECEIRA SECTION THEY RECOMEND */
+.gradient-recommend {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  margin-top: 10em;
+  padding-bottom: 10em;
+}
+.divisor.recommend {
+  color: #000;
+  background-color: #000;
+  height: 32px;
+}
+.text__display__sec {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+h1.title {
+  color: red;
+}
+.text__display__sec .text__block:first-child {
+  margin-bottom: -120px;
+}
+
+.text__display__sec .text__block {
+  max-width: 40%;
+  min-width: 40%;
+  align-items: center;
+}
+
+.text__display__sec .text__block p {
+  font-size: 20px;
+}
+
+.text__display__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.text__display__sec .text__block {
+  gap: 25px;
+}
+
+.text__block img {
+  max-height: 130px;
+  max-width: 130px;
+}
+
+/* QUARTA SECTION PRODUCTS */
+.container__section.products {
+  margin-top: -0.1em;
+  padding-bottom: 3em;
+  padding-top: 3em;
+  background: #fff url(../img/products-background.png) right;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.subtitulo.products {
+  width: 100%;
+  max-width: 28em;
+  color: #000;
+  font-size: 1.2em;
+  margin-top: 1em;
+  font-weight: 800;
+}
+.linha.products {
+  margin-top: -0.8em;
+  width: 8em;
+  margin-left: 4em;
+}
+.wine-time.products {
+  width: 15em;
+  position: absolute;
+  right: 2em;
+}
+.wave-wine.products {
+  width: 8em;
+  height: 107vh;
+  position: absolute;
+  left: 0em;
+}
+.container__wine__display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5em;
+}
+.wine__display {
+  position: relative;
+}
+.discount-image {
+  position: absolute;
+  top: -0.5em;
+  left: -1em;
+  background-color: white;
+  width: 5em;
+  border-radius: 25%;
+}
+.wine-image {
+  border: 3px solid #891e19;
+  border-radius: 8px;
+  position: relative;
+  padding: 1em;
+  width: 10em;
+  height: 18em;
+}
+.wine-image.first {
+  background: #fff url(../img/first-wine.png) no-repeat center;
+}
+.wine-image.second {
+  background: #fff url(../img/second-wine.png) no-repeat center;
+}
+.wine-image.third {
+  background: #fff url(../img/third-wine-custom.png) no-repeat center;
+}
+.price {
+  border: 3px solid #891e19;
+  background-color: #fff;
+  border-radius: 16px;
+  position: absolute;
+  right: -2.5em;
+  top: 17em;
+  width: 6em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
+  font-weight: bold;
+}
+.rs {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  font-size: 20px;
+}
+.main__price {
+  font-size: 42px;
+}
+.second__price {
+  font-size: 24px;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+.wine__description {
+  padding-top: 2.5em;
+  text-align: center;
+}
+.wine__description p {
+  font-style: italic;
+  margin-bottom: 0.3em;
+}
+.wine__description ul {
+  list-style: none;
+}
+.wine__description ul li {
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+/* FOOTER SECTION PRODUCTS */
+.footer {
+  width: 100%;
+  display: flex;
+  padding: 1em;
+  padding: 1em 4em;
+}
+.footer__social-media {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    
+}
+
+.link__image {
+    width: 1.8em;
+}
+.link__image.maps {
+    width: 2.2em;
+    margin-left: -.35em;
+}
+.footer__text-content {
+    color: #b3b3b3;
+    text-align: center;
+    margin-left: 33%;
+}
+.footer__text-content span {
+    color: white;
+    font-weight: bold;
+}
+/* CONFIGURAÇÕES DE FORMATAÇÃO GERAIS */
+
+.titulo h1 {
+  font-family: 'Libre Bodoni', serif;
+  color: white;
+  font-size: 96px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.black {
+  background-color: black;
+  z-index: -2;
+}
+
+.white {
+  background-color: white;
+}
+
+.subtitulo {
+  font-family: 'GFS Didot', serif;
+  font-weight: 100;
+  font-size: 28px;
+  color: #dfdfdf;
+}
+
+span {
+  color: #891e19;
+}
+
+.gradient {
+  width: 100%;
+  height: 10em;
+  margin-top: 0em;
+  margin-bottom: -10em;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 10%,
+    rgba(0, 0, 0, 0.7959558823529411) 43%,
+    rgba(0, 0, 0, 1) 77%
+  );
 }
