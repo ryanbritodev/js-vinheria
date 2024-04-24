@@ -8,14 +8,14 @@ var span = document.getElementsByClassName("close")[0];
 var submitBtn = document.getElementById("submit-age");
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.addEventListener("click", function() {
   modal.style.display = "none";
-}
+});
 
 // When the user submits their age, check if they're under 18
-submitBtn.onclick = function() {
+submitBtn.addEventListener("click", function() {
   var ageInput = document.getElementById("age-input").value;
-  var age = parseInt(ageInput);
+  var age = parseInt(ageInput, 10); // Ensure base 10 parsing
 
   if (!isNaN(age)) { // Check if it's a valid number
     if (age < 18) {
@@ -23,5 +23,13 @@ submitBtn.onclick = function() {
     } else {
       modal.style.display = "none"; // Close the modal if 18 or over
     }
+  } else {
+    alert("Por favor, insira uma idade válida."); // Inform user about invalid input
   }
-}
+});
+
+
+// Display the modal when the document loads
+document.addEventListener("DOMContentLoaded", function() {
+  modal.style.display = "block"; // Show the modal when the page loads
+});
