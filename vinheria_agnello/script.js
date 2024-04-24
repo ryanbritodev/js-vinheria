@@ -33,3 +33,10 @@ submitBtn.addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function() {
   modal.style.display = "block"; // Show the modal when the page loads
 });
+
+function enviarFormulario() {
+  // Exibe uma mensagem de confirmação ao enviar
+  alert("Mensagem enviada com sucesso!");
+  // Limpa o formulário após o envio
+  document.getElementById("formContato").reset();
+}
