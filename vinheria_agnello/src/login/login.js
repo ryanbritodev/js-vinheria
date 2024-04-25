@@ -6,7 +6,7 @@ function validateLogin() {
   let password = document.querySelector("#password")
 
   if (username.value === "1234" && password.value === "1234") {
-    window.location.replace("index.html")
+    window.location.replace("../lp/index.html")
   }
   else {
     alert("Nome de usuário ou senha incorretos.")
