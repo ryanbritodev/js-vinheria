@@ -19,7 +19,7 @@ submitBtn.addEventListener("click", function() {
 
   if (!isNaN(age)) { // Check if it's a valid number
     if (age < 18) {
-      window.location.href = "https://www.google.com"; // Redirect to Google if under 18
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Redirect to NEVER GONNA GIVE YOU UP if under 18
     } else {
       modal.style.display = "none"; // Close the modal if 18 or over
     }

@@ -519,6 +519,23 @@ h1.title {
   margin-bottom: 0.1em;
 }
 
+.wine__description button {
+  margin-top: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #891e19;
+  color: white;
+  font-size: 15px;
+}
+
+.wine__description button:hover {
+  background-color: wheat;
+  color: black;
+  font-size: 20px;
+  transition: 300ms;
+}
+
 .formulario {
   min-height: 100vh;
   max-height: 1440px;
