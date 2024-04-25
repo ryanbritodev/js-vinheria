@@ -231,6 +231,16 @@ body {
   border-radius: 10px;
 }
 
+.nav__bar li .btn__login {
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+.nav__bar li .btn__login:hover {
+  background-color: white;
+}
+
 /* CONTAINER GRID / DISPLAY */
 
 .header .container__grid {
