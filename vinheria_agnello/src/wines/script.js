@@ -77,7 +77,7 @@ const createProductElements = async (wines) => {
         }</p>
         <div class="wine__line">ㅤ</div>
         <p class="wine__price">R$${price}.99</p>
-        <input type="number" placeholder="Quantidade" class="wine__quantity" max="99" value="1" onchange="getWinePrice(${price})"></input>
+        <input type="number" placeholder="Quantidade" class="wine__quantity" max="99" min="1" value="1" onchange="getWinePrice(${price})"></input>
       `;
 
     winesContainer.appendChild(wineDiv);
@@ -90,10 +90,12 @@ const getWineInfoToBuy = (id) => {
 };
 const getWinePrice = (price) => {
   const quantity = Number(document.querySelector('.wine__quantity').value);
-  document.querySelector('.highlight.price').textContent = `R$${(
-    quantity *
-    (price + 0.99)
-  ).toFixed(2)}`;
+  if (quantity > 0) {
+    document.querySelector('.highlight.price').textContent = `R$${(
+      quantity *
+      (price + 0.99)
+    ).toFixed(2)}`;
+  }
 };
 const addToCart = () => {
   alert('O produto foi adicionado ao carrinho!');
