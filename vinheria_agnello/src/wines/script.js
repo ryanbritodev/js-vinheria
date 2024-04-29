@@ -45,7 +45,6 @@ const createProductElements = async (wines) => {
           wine.id
         });" type="submit" id="${wine.id}">Comprar</button>
       `;
-      console.log('FIFIIFIFIFIIIFIFIIF');
       winesContainer.appendChild(wineDiv);
       return;
     });
@@ -86,7 +85,7 @@ const createProductElements = async (wines) => {
   }
 };
 const getWineInfoToBuy = (id) => {
-  window.location.href = '/src/wines/about-wine.html';
+  window.location.href = '/vinheria_agnello/src/wines/about-wine.html';
   document.cookie = 'idWine=' + id;
 };
 const getWinePrice = (price) => {
@@ -103,11 +102,13 @@ const addToCart = () => {
 /* CALLING FUNCTIONS */
 runFunctions = async (id) => {
   const wines = await getWinesFromApi(id);
-  console.log(wines);
   createProductElements(wines);
 };
 
-if (window.location.pathname !== '/src/wines/about-wine.html') {
+if (
+  window.location.pathname !== '/vinheria_agnello/src/wines/about-wine.html'
+) {
+  console.log(window.location.pathname);
   runFunctions();
 } else {
   const id = document.cookie.split('=')[1].split(';')[0];
