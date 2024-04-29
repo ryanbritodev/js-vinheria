@@ -19,13 +19,13 @@ body {
 
 /* Fundo Translucido do Modal-Box */
 .modal {
-  display: block; 
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; 
+  height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.7); /* Preto com opacidade baixa */
   -webkit-animation-name: fadeIn;
@@ -129,23 +129,43 @@ body {
 
 /* Add Animation */
 @-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* BARRA DE ROLAGEM */
@@ -506,6 +526,7 @@ h1.title {
 .wine__description {
   padding-top: 2.5em;
   text-align: center;
+  position: relative;
 }
 .wine__description p {
   font-style: italic;
@@ -519,21 +540,24 @@ h1.title {
   margin-bottom: 0.1em;
 }
 
-.wine__description button {
-  margin-top: 1.5rem;
-  padding: 10px 15px;
+.wine__description #btn-know-more {
+  bottom: -3em;
+  left: 3.5em;
+  padding: 10px 10px;
   border-radius: 10px;
   border-style: none;
   background-color: #891e19;
   color: white;
   font-size: 15px;
+  text-decoration: none;
+  position: absolute;
+  transition: 300ms;
 }
 
-.wine__description button:hover {
+.wine__description #btn-know-more:hover {
   background-color: wheat;
   color: black;
-  font-size: 20px;
-  transition: 300ms;
+  font-size: 16px;
 }
 
 .formulario {
@@ -561,29 +585,28 @@ h1.title {
   padding: 1em 4em;
 }
 .footer__social-media {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .5em;
-    
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .link__image {
-    width: 1.8em;
+  width: 1.8em;
 }
 .link__image.maps {
-    width: 2.2em;
-    margin-left: -.35em;
+  width: 2.2em;
+  margin-left: -0.35em;
 }
 .footer__text-content {
-    color: #b3b3b3;
-    text-align: center;
-    margin-left: 33%;
+  color: #b3b3b3;
+  text-align: center;
+  margin-left: 33%;
 }
 .footer__text-content span {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 /* CONFIGURAÇÕES DE FORMATAÇÃO GERAIS */
 
