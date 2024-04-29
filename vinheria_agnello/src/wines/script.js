@@ -7,12 +7,12 @@ const getWinesFromApi = async (id) => {
 
     return data;
   }
-  console.log('SASASASA');
+
   const data = (await fetch('https://api.sampleapis.com/wines/reds')).json();
 
   return data;
 };
-const createProductElements = async (wines) => {
+const createProductElements = async (wines, priceWine) => {
   if ((await wines.length) > 1) {
     const winesContainer = document.querySelector('.wines__products');
     const slicedWinesData = wines.slice(1, 30);
@@ -21,6 +21,7 @@ const createProductElements = async (wines) => {
       const wineDiv = document.createElement('div');
       wineDiv.classList.add('products__wine');
       wineDiv.id = wine.id;
+      const price = 60 + Math.floor(Math.random() * 100) + 0.99;
 
       wineDiv.innerHTML = `
         <div class="wine__feedback">
@@ -40,10 +41,11 @@ const createProductElements = async (wines) => {
             : `${wine.location}`
         }</p>
         <div class="wine__line">ㅤ</div>
-        <p class="wine__price">R$${60 + Math.floor(Math.random() * 100)}.99</p>
-        <button class="wine__buy" onclick="getWineInfoToBuy(${
-          wine.id
-        });" type="submit" id="${wine.id}">Comprar</button>
+        <p class="wine__price">R$${price}</p>
+        <button class="wine__buy" onclick="getWineInfoToBuy(${[
+          wine.id,
+          price,
+        ]});" type="submit" id="${wine.id}">Comprar</button>
       `;
       winesContainer.appendChild(wineDiv);
       return;
@@ -56,7 +58,7 @@ const createProductElements = async (wines) => {
     console.log(wine);
     wineDiv.classList.add('products__wine');
     wineDiv.id = wine.id;
-    const price = 60 + Math.floor(Math.random() * 100);
+    const price = 60 + Math.floor(Math.random() * 100) + 0.99;
 
     wineDiv.innerHTML = `
         <div class="wine__feedback">
@@ -76,24 +78,24 @@ const createProductElements = async (wines) => {
             : `${wine.location}`
         }</p>
         <div class="wine__line">ㅤ</div>
-        <p class="wine__price">R$${price}.99</p>
-        <input type="number" placeholder="Quantidade" class="wine__quantity" max="99" min="1" value="1" onchange="getWinePrice(${price})"></input>
+        <p class="wine__price">R$${priceWine}</p>
+        <input type="number" placeholder="Quantidade" class="wine__quantity" max="99" min="1" value="1" onchange="getWinePrice(${priceWine})"></input>
       `;
 
     winesContainer.appendChild(wineDiv);
-    getWinePrice(price);
+    getWinePrice(priceWine);
   }
 };
-const getWineInfoToBuy = (id) => {
+const getWineInfoToBuy = (id, price) => {
   window.location.href = '/vinheria_agnello/src/wines/about-wine.html';
-  document.cookie = 'idWine=' + id;
+  document.cookie = '';
+  document.cookie = `wineData=${[id, price]};`;
 };
 const getWinePrice = (price) => {
   const quantity = Number(document.querySelector('.wine__quantity').value);
   if (quantity > 0) {
     document.querySelector('.highlight.price').textContent = `R$${(
-      quantity *
-      (price + 0.99)
+      quantity * price
     ).toFixed(2)}`;
   }
 };
@@ -102,20 +104,20 @@ const addToCart = () => {
 };
 
 /* CALLING FUNCTIONS */
-runFunctions = async (id) => {
+runFunctions = async (id, price) => {
   const wines = await getWinesFromApi(id);
-  createProductElements(wines);
+  createProductElements(wines, price);
 };
 
 if (
   window.location.pathname !== '/vinheria_agnello/src/wines/about-wine.html'
 ) {
-  console.log(window.location.pathname);
   runFunctions();
 } else {
-  const id = document.cookie.split('=')[1].split(';')[0];
-  console.log('ID ELSE: ' + id);
-  runFunctions(id);
+  const id = Number(document.cookie.split('=')[1].split(',')[0]);
+  const price = Number(document.cookie.split('=')[1].split(',')[1]);
+
+  runFunctions(id, price);
 }
 
 /* EVENT LISTENERS */
