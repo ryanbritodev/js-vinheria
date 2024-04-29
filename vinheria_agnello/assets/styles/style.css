@@ -221,7 +221,7 @@ body {
   );
   height: 12em;
   width: 100%;
-  margin-top: -1em;
+  margin-top: -0.4em;
   padding-top: 1em;
 }
 
@@ -569,7 +569,10 @@ h1.title {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #e0cfce;
+  background-image: url(../img/fundo-formulario.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; /* Ajuste a imagem para cobrir o fundo */
+  background-position: center; /* Centralize a imagem */
 }
 
 .contact-form {
