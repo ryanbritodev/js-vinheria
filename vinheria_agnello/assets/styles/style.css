@@ -573,6 +573,26 @@ h1.title {
   width: 100%;
 }
 
+.anchor__description__div .btn__harmony {
+  font-family: "GFS Didot", serif;
+  cursor: pointer;
+  bottom: -3em;
+  left: 3.5em;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: none;
+  border: 1px solid #891e19;
+  color: #891e19;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 300ms;
+}
+
+.anchor__description__div .btn__harmony:hover {
+  background-color: #891e19;
+  color: wheat;
+}
+
 .formulario {
   min-height: 100vh;
   max-height: 1440px;

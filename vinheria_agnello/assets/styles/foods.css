@@ -1,0 +1,41 @@
+.container__display {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(245, 222, 179, 0.712);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagem__vinho {
+    max-height: 400px;
+}
+
+.harmo__text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.harmo__text h2 {
+    font-size: 27px;
+}
+
+.harmo__text ul li {
+    font-size: 20px;
+}
+
+.harmo__img {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 45%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

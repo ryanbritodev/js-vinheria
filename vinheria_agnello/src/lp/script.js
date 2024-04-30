@@ -40,3 +40,9 @@ function enviarFormulario() {
   alert("Mensagem enviada com sucesso!");
   document.getElementById("formContato").reset(); // Limpa o formulário após o envio
 }
+
+const getWineInfo = (id) => {
+  window.location.href = '/vinheria_agnello/src/foods/foods.html';
+  document.cookie = '';
+  document.cookie = `wineData=${[id]}; path=/vinheria_agnello/src/foods/foods.html`;
+};
