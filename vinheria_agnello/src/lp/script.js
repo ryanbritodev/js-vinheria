@@ -46,3 +46,10 @@ const getWineInfo = (id) => {
   document.cookie = '';
   document.cookie = `wineData=${[id]}; path=/vinheria_agnello/src/foods/foods.html`;
 };
+
+document.getElementById("telefone").addEventListener("keypress", function(event) {
+  // Permite apenas números, Backspace, Delete e teclas de navegação (setas)
+  if (!event.key.match(/[0-9]/) && event.keyCode !== 8 && event.keyCode !== 46) {
+    event.preventDefault();
+  }
+});
