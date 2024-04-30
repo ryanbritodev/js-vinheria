@@ -556,14 +556,21 @@ h1.title {
   color: white;
   font-size: 15px;
   text-decoration: none;
-  position: absolute;
   transition: 300ms;
 }
 
 .wine__description #btn-know-more:hover {
   background-color: wheat;
   color: black;
-  font-size: 16px;
+}
+
+.wine__description .anchor__description__div {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: center;
+  width: 100%;
 }
 
 .formulario {
