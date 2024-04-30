@@ -276,5 +276,10 @@ html {
   padding: 0.5em;
   cursor: pointer;
   transition: 300ms;
-  margin-top: 12em;
+  margin-top: 7em;
+}
+.buttonDiscount {
+  width: 10em;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
 }

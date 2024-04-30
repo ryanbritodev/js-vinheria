@@ -12,9 +12,21 @@
         <nav class="nav__bar">
           <ul>
             <li><a href="/vinheria_agnello/src/lp/index.html#">Home</a></li>
-            <li><a href="/vinheria_agnello/src/lp/index.html#made-fy">Para você</a></li>
-            <li><a href="/vinheria_agnello/src/lp/index.html#feedback">Avaliação</a></li>
-            <li><a href="/vinheria_agnello/src/lp/index.html#products">Compre já</a></li>
+            <li>
+              <a href="/vinheria_agnello/src/lp/index.html#made-fy"
+                >Para você</a
+              >
+            </li>
+            <li>
+              <a href="/vinheria_agnello/src/lp/index.html#feedback"
+                >Avaliação</a
+              >
+            </li>
+            <li>
+              <a href="/vinheria_agnello/src/lp/index.html#products"
+                >Compre já</a
+              >
+            </li>
             <li>
               <a href="../login/login.html" id="login" class="btn__login"
                 >Login</a
@@ -52,13 +64,20 @@
         </div> -->
         <div class="buy-info">
           <h2 class="buy-info__title">
-            O total do pedido é <span class="highlight price">R$20</span>
+            O subtotal do pedido é <span class="highlight price">R$??</span>
           </h2>
 
-          <h3 class="buy-info__promo">
-            Tem algum cupom?
-          </h3>
-          <input type="text" class="input-promo" placeholder="Ex: CPN855ASDL">
+          <h3 class="buy-info__promo">Tem algum cupom?</h3>
+          <input type="text" class="input-promo" placeholder="Ex: CPN855ASDL" />
+
+          <button onclick="applyDiscount()" class="buttonDiscount">
+            Aplicar Desconto
+          </button>
+
+          <h2 class="totalDiscount">
+            Preço do Produto com o desconto é:
+            <p class="result"></p>
+          </h2>
 
           <button class="buy-info__cart-button">Adicionar ao carrinho</button>
         </div>

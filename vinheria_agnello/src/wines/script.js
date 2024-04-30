@@ -133,3 +133,19 @@ buyButtons.forEach((buyButton) => {
 cartButton.addEventListener('click', () => {
   addToCart();
 });
+
+const applyDiscount = () => {
+  const price = Number(document.cookie.split('=')[1].split(',')[1]);
+  const quantity = Number(document.querySelector('.wine__quantity').value);
+  const coupon = document.querySelector('.input-promo').value.toUpperCase();
+
+  if (coupon === 'FIAP2024') {
+    let discount = price * quantity * 0.1; // 10% de desconto
+    let discountedPrice = price * quantity - discount;
+    document.querySelector('.result').textContent =
+      'R$' + discountedPrice.toFixed(2);
+  } else {
+    document.querySelector('.result').textContent =
+      'Cupom inválido ou não aplicável.';
+  }
+};
